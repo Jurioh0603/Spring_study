@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 이 board.xml문서는 BoardMapper인터페이스의 구현체 역할을 하는 파일 -->
+  <mapper namespace="com.mycom.board.mapper.BoardMapper">
+  
+  	<!-- 목록보기 -->
+  	<!-- <실행쿼리요소 id="유니크한 id 값(반드시 메서드명과 일치하게) resultType="패키지명.클래스명"> -->
+  	<select id="getList" resultType="com.mycom.board.vo.BoardVO">
+		select no, writerName, title, content 
+		from board 
+		order by no desc
+	</select>
+	
+	<!-- 상세보기 -->
+	<select id="getBoard" resultType="com.mycom.board.vo.BoardVO" parameterType="int">
+		select no, writerName, title, content 
+		from board 
+		where no=#{no}
+	</select>
+	
+	<!-- 글 등록하기 -->
+	<insert id="write">
+		insert into board (no,writerName,title,content)
+		values(boardno_seq.nextval, #{writerName}, #{title}, #{content})
+	</insert>
+	
+	<!-- 글 수정하기 -->
+	<update id="update">
+		update board
+		set writerName=#{writerName}, title = #{title}, content = #{content}
+		where no=#{no}
+	</update>
+	
+	<!-- 글 삭제하기 -->
+	<delete id="delete">
+		delete from board where no = #{no}
+	</delete>
+  </mapper>
