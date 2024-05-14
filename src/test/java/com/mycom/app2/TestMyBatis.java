@@ -1,7 +1,8 @@
 package com.mycom.app2;
 //test목적의 클래스 -> 실행 Run as -> Junit
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +11,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.mycom.app2.mapper.TestMapper;
-import com.mycom.board.vo.BoardVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
@@ -32,6 +32,7 @@ public class TestMyBatis {
 		System.out.println(list.size());
 		System.out.println(list.toString());
 	}
+	
 	
 	@Test
 	public void testInsertBoard() {
@@ -68,5 +69,27 @@ public class TestMyBatis {
 		testMapper.deleteWriter(writerName);
 	}
 	*/
-	
+	//key값은 컬럼명, vlaue값은 해당 컬럼의 결과 내용
+	/*
+	@Test
+	public void testGetBoard2() {
+		HashMap<String, Object> map = testMapper.getBoard2(4);
+		System.out.println(map.toString());
+		System.out.println(map.get("NO"));//키로 값을 출력할 때 대문자 사용
+		System.out.println(map.get("WRITERNAME"));//키로 값을 출력할 때 대문자 사용
+	}*/
+	/*
+	@Test
+	public void testGetBoard4() {
+		int result = testMapper.selectTotalCnt();
+		System.out.println(result);
+	}
+	*/
+	/*
+	@Test
+	public void testGetBoard4() {
+		ArrayList<HashMap<String,Object>> list = testMapper.selectBoard(5);
+		System.out.println("글번호 1부터 no번까지"+list);
+	}
+	*/
 }

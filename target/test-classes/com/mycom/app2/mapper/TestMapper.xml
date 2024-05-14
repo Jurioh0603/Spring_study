@@ -48,4 +48,32 @@
 		where writerName = #{writerName}
 	</delete>
 	
+	
+	<!-- map사용 -->
+	<select id="getBoard2" resultType="java.util.HashMap" parameterType="int">
+		select * 
+		from board
+		where no = #{no}
+	</select>
+	
+	<!-- 쿼리문에 alias 달아줄 수 있음
+	<select id="getBoard2" resultType="java.util.HashMap" parameterType="int">
+		select no as bno,
+			   writerName as name
+		from board
+		where no = #{no}
+	</select>
+	 -->
+	 
+	 <select id="selectTotalCnt" resultType="int">
+	 	select count(*) as cnt 
+	 	from board
+	 </select>
+	 <!-- java.util.HashMap == hashmap == map 모두 같은 결과 -->
+	 <select id="selectBoard" resultType="map" parameterType="int">
+	 	select * 
+	 	from board 
+	 	where no between 1 and #{no}
+	 </select>
+
 </mapper>
