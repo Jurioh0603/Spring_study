@@ -29,5 +29,14 @@ BEGIN
   commit;
 END;
 /
--- 
-select *from board;
+-- 목록보기 
+select no, writerName, title, content 
+from board 
+order by no desc;
+
+-- 상세보기
+select no, writerName, title, content 
+from board 
+where no=5;
+
+-- 글등록하기

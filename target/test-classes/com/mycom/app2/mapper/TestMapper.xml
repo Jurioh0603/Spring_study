@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TestMapper의 구현체 역할을 하는 문서 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mycom.app2.mapper.TestMapper">
+	<select id="getTime" resultType="java.lang.String">
+		select sysdate from dual
+	</select>
+	
+	<!-- parameterType속성의 값으로 vo를 사용하면 
+		 내부적으로 VO의 setter가 이용된다
+		 여기에서는 해당컬럼의 값을 가져와 VO의 setTitle() -->
+	<select id="getBoard" resultType="com.mycom.board.vo.BoardVO">
+		select * from board
+	</select>
+	
+	<!-- parameterType속성의 값으로 vo를 사용하면 
+		 내부적으로 VO의 setter메소드가 이용된다
+		 예) #{title} VO의 detTitle() -->
+	<insert id="insertBoard" parameterType="com.mycom.board.vo.BoardVO">
+		insert into board (no,writerName,title,content)
+		values(boardno_seq.nextval, #{writerName}, #{title}, #{content})
+	</insert>
+
+	<insert id="insertBoard2" parameterType="java.lang.String">
+		insert into board(no,writerName)
+		values(boardno_seq.nextval, #{wrtierName})
+	</insert>
+	
+	<insert id="insertBoard3" parameterType="com.mycom.board.vo.BoardVO">
+		insert into board(no,writerName)
+		values(boardno_seq.nextval, #{wrtierName})
+	</insert>
+	
+	<update id="updateBoard" parameterType="com.mycom.board.vo.BoardVO">
+		update board
+		set title=#{title}, content=#{content}
+		where no=#{no}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where no = #{no} 
+	</delete>
+	
+	<delete id="deleteWriter" parameterType="String">
+		delete from board
+		where writerName = #{writerName}
+	</delete>
+	
+</mapper>

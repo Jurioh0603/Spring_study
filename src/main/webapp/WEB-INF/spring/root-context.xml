@@ -36,6 +36,7 @@
    </bean>  
     
    <mybatis-spring:scan base-package="com.mycom.board.mapper"/>
+   <mybatis-spring:scan base-package="com.mycom.app2.mapper"/>
    <mybatis-spring:scan base-package="com.mycom.*"/>   
    <!--  myBatis연결 bean객체 생성  -->
 	
