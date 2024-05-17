@@ -26,20 +26,24 @@ JavaScript<br>
 HTML5<br>
 CSS3
 <br>
+<br>
 ✔️ Backend<br>
 Java<br>
 Spring Boot<br>
 Spring Data JPA<br>
 Gradle
 <br>
+<br>
 ✔️ DB<br>
 MySQL
+<br>
 <br>
 ✔️ Communication<br>
 형상 관리 - Github<br>
 Discord<br>
 ERD-Cloud<br>
 Figma
+<br>
 <br>
 
 ## 📚 목차
