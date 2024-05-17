@@ -126,7 +126,7 @@ Figma
 <br>
 
 ## 💎 ERD 다이어그램
-[여정 DB]<https://www.erdcloud.com/d/Ss9pRDkpsm6kRXydg>
+[여정 DB](https://www.erdcloud.com/d/Ss9pRDkpsm6kRXydg)
 <br>
 <br>
 
@@ -136,4 +136,4 @@ Figma
 <br>
 
 ## 🍏와이어프레임
-[와이어프레임]<https://www.figma.com/design/ewXga6d8KzCuF31UqQATXe/Untitled?node-id=0-1&t=i3AZFflWF7BajbuK-0>
+[와이어프레임](https://www.figma.com/design/ewXga6d8KzCuF31UqQATXe/Untitled?node-id=0-1&t=i3AZFflWF7BajbuK-0)
